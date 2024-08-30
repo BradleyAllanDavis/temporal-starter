@@ -66,8 +66,12 @@
             <artifactId>temporal-spring-boot-starter</artifactId>
             <version>1.25.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
 
-<!--        old wrapper-->
+        <!--        old wrapper-->
 <!--        <dependency>-->
 <!--            <groupId>com.okcoin.commons</groupId>-->
 <!--            <artifactId>okcoin-temporal</artifactId>-->

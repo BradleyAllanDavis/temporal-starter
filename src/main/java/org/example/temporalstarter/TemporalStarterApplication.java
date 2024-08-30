@@ -9,7 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 import java.util.UUID;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "org.example.temporalstarter")
 //@ComponentScan(basePackages = {
 //        "org.example.temporalstarter",
 //})

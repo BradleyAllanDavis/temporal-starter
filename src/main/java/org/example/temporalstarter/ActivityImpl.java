@@ -2,9 +2,9 @@ package org.example.temporalstarter;
 
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 @io.temporal.spring.boot.ActivityImpl(
-        taskQueues = "echo-string"
+        taskQueues = "starter"
 )
 public class ActivityImpl implements ActivityInterface {
 
