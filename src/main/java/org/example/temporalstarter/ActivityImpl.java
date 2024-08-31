@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 //@Component
 @io.temporal.spring.boot.ActivityImpl(
-        taskQueues = "starter"
+        taskQueues = TaskQueue.STARTER
 )
 public class ActivityImpl implements ActivityInterface {
 

@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
 
-@Configuration
+//@Configuration
 public class TemporalConfiguration {
 
 //    @Bean
@@ -19,39 +19,39 @@ public class TemporalConfiguration {
 //        return new TemporalClusterChecker();
 //    }
 
-    @Bean
-    @DependsOn("temporalClusterChecker")
-//    @ConditionalOnBean(TemporalClusterChecker.class)
-    @Conditional(TemporalClusterAvailableCondition.class)
-    public WorkflowServiceStubs workflowServiceStubs() {
-        return WorkflowServiceStubs.newLocalServiceStubs(); // or your specific configuration
-    }
-
-    @Bean
-    @DependsOn("temporalClusterChecker")
-//    @ConditionalOnBean(TemporalClusterChecker.class)
-    @Conditional(TemporalClusterAvailableCondition.class)
-    public WorkflowClient workflowClient(WorkflowServiceStubs workflowServiceStubs) {
-        return WorkflowClient.newInstance(workflowServiceStubs);
-    }
-
-    @Bean
-    @DependsOn("temporalClusterChecker")
-//    @ConditionalOnBean(TemporalClusterChecker.class)
-    @Conditional(TemporalClusterAvailableCondition.class)
-    public WorkerFactory workerFactory(WorkflowClient workflowClient) {
-        return WorkerFactory.newInstance(workflowClient);
-    }
-
-    @Bean
-    public TemporalOptionsCustomizer<WorkflowClient> workflowClientOptions() {
-        // Customize workflow client options if needed
-        return (options) -> options;
-    }
-
-    @Bean
-    public TemporalOptionsCustomizer<WorkerFactory> workerFactoryOptions() {
-        // Customize worker factory options if needed
-        return (options) -> options;
-    }
+//    @Bean
+//    @DependsOn("temporalClusterChecker")
+////    @ConditionalOnBean(TemporalClusterChecker.class)
+//    @Conditional(TemporalClusterAvailableCondition.class)
+//    public WorkflowServiceStubs workflowServiceStubs() {
+//        return WorkflowServiceStubs.newLocalServiceStubs(); // or your specific configuration
+//    }
+//
+//    @Bean
+//    @DependsOn("temporalClusterChecker")
+////    @ConditionalOnBean(TemporalClusterChecker.class)
+//    @Conditional(TemporalClusterAvailableCondition.class)
+//    public WorkflowClient workflowClient(WorkflowServiceStubs workflowServiceStubs) {
+//        return WorkflowClient.newInstance(workflowServiceStubs);
+//    }
+//
+//    @Bean
+//    @DependsOn("temporalClusterChecker")
+////    @ConditionalOnBean(TemporalClusterChecker.class)
+//    @Conditional(TemporalClusterAvailableCondition.class)
+//    public WorkerFactory workerFactory(WorkflowClient workflowClient) {
+//        return WorkerFactory.newInstance(workflowClient);
+//    }
+//
+//    @Bean
+//    public TemporalOptionsCustomizer<WorkflowClient> workflowClientOptions() {
+//        // Customize workflow client options if needed
+//        return (options) -> options;
+//    }
+//
+//    @Bean
+//    public TemporalOptionsCustomizer<WorkerFactory> workerFactoryOptions() {
+//        // Customize worker factory options if needed
+//        return (options) -> options;
+//    }
 }

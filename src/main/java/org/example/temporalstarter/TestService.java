@@ -16,12 +16,12 @@ import org.springframework.stereotype.Service;
 import javax.annotation.PostConstruct;
 import java.util.UUID;
 
-@Service
+//@Service
 public class TestService {
 
-    @Lazy
-    @Autowired
-    private WorkflowClient workflowClient;
+//    @Lazy
+//    @Autowired
+//    private WorkflowClient workflowClient;
 
 //    @Autowired
 //    private WorkerFactory workerFactory;
@@ -49,20 +49,20 @@ public class TestService {
 //        worker.registerWorkflowImplementationFactory(WorkflowImpl.class, workerFactory, WorkerFactory.newInstance(workflowClient));
 
 //        // Autoconfigure
-        WorkflowInterface workflow = workflowClient.newWorkflowStub(
-                WorkflowInterface.class,
-                WorkflowOptions.newBuilder()
-                        .setWorkflowId("starter" + "-" + UUID.randomUUID().toString().substring(0, 6))
-                        .setTaskQueue("starter")
-                        .build()
-        );
+//        WorkflowInterface workflow = workflowClient.newWorkflowStub(
+//                WorkflowInterface.class,
+//                WorkflowOptions.newBuilder()
+//                        .setWorkflowId("starter" + "-" + UUID.randomUUID().toString().substring(0, 6))
+//                        .setTaskQueue("starter")
+//                        .build()
+//        );
 //
 //        // DOES NOT WORK
 //        workflow.echoCheck();
 
         // WORKS
 //        WorkflowClient.execute(workflow::echoCheck);
-        WorkflowExecution execution = WorkflowClient.start(workflow::echoCheck);
+//        WorkflowExecution execution = WorkflowClient.start(workflow::echoCheck);
 
         // Old way
 //        WorkflowServiceStubs service = WorkflowServiceStubs.newServiceStubs(WorkflowServiceStubsOptions.newBuilder()

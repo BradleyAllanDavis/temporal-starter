@@ -6,7 +6,7 @@ import io.temporal.workflow.Workflow;
 import java.time.Duration;
 
 @io.temporal.spring.boot.WorkflowImpl(
-        taskQueues = "starter"
+        taskQueues = TaskQueue.STARTER
 )
 //@AllArgsConstructor
 public class WorkflowImpl implements WorkflowInterface {
